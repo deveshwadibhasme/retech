@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+        rel="stylesheet">
+    <script src='https://kit.fontawesome.com/0f0486bb75.js' crossorigin='anonymous'></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="output.css">
+    <script src='script.js' defer></script>
+    <style>
+        * {
+            user-select: none;
+            scroll-behavior: smooth;
+        }
+
+        .clip-path {
+            clip-path: polygon(99% 0, 100% 51%, 49% 74%, 0 48%, 0% 0%);
+        }
+
+        .clip-path-2 {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+
+        .shadow-custom {
+            filter: drop-shadow(1px 1px 45px #3B82F6);
+        }
+
+        .course:hover .custom {
+            filter: drop-shadow(1px 1px 35px #3B82F6);
+        }
+
+        #ms-info::after,
+        #tally-info::after,
+        #c-info::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 45%;
+            height: 10px;
+            width: 30px;
+            clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+            background-color: inherit;
+        }
+
+        .course .custom #ms-info,
+        .course .custom #tally-info,
+        .course .custom #c-info {
+            transform: rotateY(180deg);
+            transform: translate(50%, 50%);
+        }
+
+        .custom .add {
+            transform: rotateY(90deg);
+        }
+
+        body {
+            font-family: "Sofia Sans", sans-serif;
+            background-color: rgb(10, 12, 167);
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero max-w-full min-h-full -z-50 relative">
+        <marquee behavior="smooth" direction="right" class="absolute translate-y-32 z-40 text-white">Website development is not completed yet</marquee>
+        <div class="fixed top-0 w-full md:w-full h-16 z-20" id="header">
+            <div class="mx-auto flex justify-around max-w-screen w-full md:max-w-screen h-full items-center"
+                id="header-inner">
+                <nav
+                    class="max-w-md w-full hidden md:flex items-center justify-between text-[12px] md:text-[16px] uppercase p-2 font-bold text-white ]">
+                    <a class="p-2 hover:bg-blue-700 rounded-xl" href="">
+                        Home
+                    </a>
+                    <a class="p-2 hover:bg-blue-700 rounded-xl" href="">
+                        Testinomial
+                    </a>
+                    <a class="p-2 hover:bg-blue-700 rounded-xl" href="">
+                        About us
+                    </a>
+                </nav>
+                <div class="text-2xl visible md:hidden text-white" id="menu-icon">
+                    ☰
+                </div>
+                <div class="max-w-40 -mr-7 md:mr-0 w-full flex gap-4 items-center h-full" id="buttons">
+                    <button
+                        class="text-[12px] md:text-sm text-white hover:text-blue-900 md:h-10 w-14 md:w-20 capitalize p-2 font-semibold bg-blue-900 hover:bg-blue-100 rounded-md"
+                        id="courses"><a href="#course-main">
+                            Courses
+                        </a>
+                    </button>
+                    <button
+                        class="text-[12px] md:text-sm text-blue-900 hover:text-white md:h-10 w-16 md:w-20 capitalize p-2 font-semibold bg-white hover:bg-blue-900 rounded-md"
+                        id="contacts">
+                        <a href="#contact">
+                            Contacts
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="h-[560px] bg-right-bottom md:bg-center w-screen bg-[url(/image/hero-img.jpg)] after:bg-[rgba(71,61,135,0.4)] after:max-w-full after:min-h-screen after:absolute after:z-10 after:w-full after:inset-0 backdrop-blur-xl clip-path -mb-40 items-center justify-center flex bg-no-repeat">
+
+            <h1 class="mb-32 text-5xl md:text-7xl text-white z-20 font-bold text-center md:text-balance cursor-pointer">
+                <span class="hover:text-cyan-500 transition-colors ease-linear">Re-Tech</span>
+                <span class="hover:text-cyan-400 transition-colors ease-linear">Computer</span>
+                <span class="hover:text-cyan-800 transition-colors ease-linear">Institute</span>
+            </h1>
+
+        </div>
+        <main
+            class="mx-auto max-w-screen-xl flex  justify-center md:justify-around flex-wrap gap-4 md:gap-0 md:flex-none  mb-3 mt-4"
+            id="course-main">
+            <div class="custom relative z-10">
+                <div class="course clip-path-2" id="ms-office">
+                    <h2 class="text-center font-semibold text-3xl tracking-normal select-none">MS Office</h2>
+                    <p class="text-lg text-center mt-2 select-none">MS-Word,MS-Excel,MS-Powerpoint,Internet</p>
+                    <button class="rounded-xl shadow-xl shadow-blue-500 text-lg  w-28
+                        h-10 mt-3 mx-auto block bg-blue-500 hover:bg-orange-600 p-2 select-none" id="enroll-btn"
+                        onclick="forInfo1()">Enroll
+                        Now</button>
+                </div>
+                <div class="absolute pointer-events-none text-sm top-1/3 w-64 backdrop-blur-sm bg-sky-700/50 text-center left-2/4 p-2 -translate-x-2/4 -translate-y-2/4  transition-transform hidden"
+                    id="ms-info">
+                    <h4>Course Fee : 4500/-</h4>
+                    <h4>Course Duration : 2.5 Months</h4>
+                    <h4>Course AddOn : English and Hindi Typing</h4>
+                    <button
+                        class="text-sm text-blue-900 hover:text-white h-6 w-16 capitalize pb-px mt-1 font-semibold bg-white hover:bg-blue-900 rounded-md pointer-events-auto "
+                        id="contacts"> <a href="#contact">
+                            Contacts
+                        </a></button>
+                </div>
+            </div>
+            <div class="custom relative z-10">
+                <div class="course clip-path-2" id="tally-erp">
+                    <h2 class="text-center font-semibold text-3xl tracking-normal select-none">Tally ERP 9</h2>
+                    <p class="text-lg text-center mt-2">Legder Maintainence, Vouchers Creation and GST Invoices</p>
+                    <button class="rounded-xl shadow-xl shadow-blue-500 text-lg  w-28
+                    h-10 mt-1 md:mt-3 mx-auto block bg-blue-500 hover:bg-orange-600 p-2 select-none"
+                        onclick="forInfo2()">Enroll
+                        Now</button>
+                </div>
+                <div class="absolute pointer-events-none text-sm top-1/3 w-64 backdrop-blur-sm bg-sky-700/50 text-center left-2/4 p-2 -translate-x-2/4 -translate-y-2/4 transition-transform hidden"
+                    id="tally-info">
+                    <h4>Course Fee : 4500/-</h4>
+                    <h4>Course Duration : 2.5 Months</h4>
+                    <h4>Course AddOn : English and Hindi Typing</h4>
+                    <button
+                        class="text-sm text-blue-900 hover:text-white h-6 w-16 capitalize pb-px mt-1 font-semibold bg-white hover:bg-blue-900 rounded-md pointer-events-auto"
+                        id="contacts">
+                        <a href="#contact">
+                            Contacts
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <div class="custom relative z-10">
+                <div class="course clip-path-2 bg-white hover:" id="programming">
+                    <h2 class="text-center font-semibold text-3xl tracking-normal">C & C++</h2>
+                    <p class="text-lg text-center mt-2">Fundamental of Programming with notes</p>
+                    <button
+                        class="w-28 rounded-xl shadow-xl shadow-blue-500 text-lg mt-3 mx-auto block h-10 bg-blue-500 p-2 hover:bg-orange-600 select-none"
+                        onclick="forInfo3()">Enroll
+                        Now</button>
+                </div>
+                <div class="absolute pointer-events-none text-sm top-1/3 w-64 backdrop-blur-sm bg-sky-700/50 text-center left-2/4 p-2 -translate-x-2/4 -translate-y-2/4 transition-transform hidden"
+                    id="c-info">
+                    <h4>Course Fee : 8000/-</h4>
+                    <h4>Course Duration : 5 Months</h4>
+                    <h4>Course AddOn : English and Hindi Typing</h4>
+                    <button
+                        class="text-sm text-blue-900 hover:text-white h-6 w-16 capitalize pb-px mt-1 font-semibold bg-white hover:bg-blue-900 rounded-md pointer-events-auto"
+                        id="contacts"><a href="#contact">Contact</a></button>
+                </div>
+            </div>
+        </main>
+        <footer
+            class="max-w-screen-xl w-full px-9 bg-rose-400 min-h-32 flex flex-col md:flex-row items-center mt-10 text-xl tracking-wide justify-between"
+            id="contact">
+            <div class="text-center md:text-balance">
+                <h4 class="">Mukesh Samrit :</h4>
+                <p class="select-all">&nbsp;8668979163</p>
+            </div>
+            <div class="mt-3">
+                <p class="text-center md:text-balance">Old Kamptee Road, <br>Near Gopi Kirana, Kalmana, <br> Nagpur</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
