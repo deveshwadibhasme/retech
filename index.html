@@ -36,7 +36,8 @@
 
         #ms-info::after,
         #tally-info::after,
-        #c-info::after {
+        #c-info::after,
+        #entry-list::after {
             content: '';
             position: absolute;
             bottom: -10px;
@@ -58,6 +59,8 @@
             transform: rotateY(90deg);
         }
 
+        input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
         body {
             font-family: "Sofia Sans", sans-serif;
             background-color: rgb(10, 12, 167);
@@ -67,9 +70,9 @@
 </head>
 
 <body>
-    <div class="hero max-w-full min-h-full relative">
+    <div class="hero max-w-full min-h-full relative overflow-x-hidden">
         <marquee behavior="smooth" direction="right" class="absolute translate-y-32 z-40 text-white">Website development is not completed yet</marquee>
-        <div class="fixed top-0 w-full md:w-full h-16 z-20" id="header">
+        <div class="fixed top-0 w-full md:w-full h-16 z-20 overflow-x-hidden" id="header">
             <div class="mx-auto flex justify-around max-w-screen w-full md:max-w-screen h-full items-center"
                 id="header-inner">
                 <nav
@@ -105,7 +108,7 @@
             </div>
         </div>
         <div
-            class="h-[560px] bg-right-bottom md:bg-center w-screen bg-[url(/image/hero-img.jpg)] after:bg-[rgba(71,61,135,0.4)] after:max-w-full after:min-h-screen after:absolute after:z-10 after:w-full after:inset-0 backdrop-blur-xl clip-path -mb-40 items-center justify-center flex bg-no-repeat">
+            class="h-[560px] bg-right-bottom md:bg-center w-screen bg-[url(src\image\hero-img.jpg)] after:bg-[rgba(71,61,135,0.4)] after:max-w-full after:min-h-screen after:absolute after:z-10 after:w-full after:inset-0 backdrop-blur-xl clip-path -mb-40 items-center justify-center flex bg-no-repeat overflow-x-hidden">
 
             <h1 class="mb-32 text-5xl md:text-7xl text-white z-20 font-bold text-center md:text-balance cursor-pointer">
                 <span class="hover:text-cyan-500 transition-colors ease-linear">Re-Tech</span>
@@ -115,7 +118,7 @@
 
         </div>
         <main
-            class="mx-auto max-w-screen-xl flex  justify-center md:justify-around flex-wrap gap-4 md:gap-0 md:flex-none  mb-3 mt-4"
+            class="mx-auto max-w-screen-xl flex  justify-center md:justify-around flex-wrap gap-4 md:gap-0 md:flex-none mb-16 mt-4"
             id="course-main">
             <div class="custom relative z-10">
                 <div class="course clip-path-2" id="ms-office">
@@ -126,15 +129,15 @@
                         onclick="forInfo1()">Enroll
                         Now</button>
                 </div>
-                <div class="absolute pointer-events-none text-sm top-1/3 w-64 backdrop-blur-sm bg-sky-700/50 text-center left-2/4 p-2 -translate-x-2/4 -translate-y-2/4  transition-transform hidden"
+                <div class="absolute pointer-events-none text-sm top-1/3 w-64 backdrop-blur-sm bg-sky-700/50 text-center left-2/4 p-2 -translate-x-2/4 -translate-y-2/4  transition-transform hidden add"
                     id="ms-info">
                     <h4>Course Fee : 4500/-</h4>
                     <h4>Course Duration : 2.5 Months</h4>
                     <h4>Course AddOn : English and Hindi Typing</h4>
                     <button
                         class="text-sm text-blue-900 hover:text-white h-6 w-16 capitalize pb-px mt-1 font-semibold bg-white hover:bg-blue-900 rounded-md pointer-events-auto "
-                        id="contacts"> <a href="#contact">
-                            Contacts
+                        id="contacts"> <a href="#application-form">
+                            Fill Form
                         </a></button>
                 </div>
             </div>
@@ -147,7 +150,7 @@
                         onclick="forInfo2()">Enroll
                         Now</button>
                 </div>
-                <div class="absolute pointer-events-none text-sm top-1/3 w-64 backdrop-blur-sm bg-sky-700/50 text-center left-2/4 p-2 -translate-x-2/4 -translate-y-2/4 transition-transform hidden"
+                <div class="absolute pointer-events-none text-sm top-1/3 w-64 backdrop-blur-sm bg-sky-700/50 text-center left-2/4 p-2 -translate-x-2/4 -translate-y-2/4 transition-transform hidden add"
                     id="tally-info">
                     <h4>Course Fee : 4500/-</h4>
                     <h4>Course Duration : 2.5 Months</h4>
@@ -155,8 +158,8 @@
                     <button
                         class="text-sm text-blue-900 hover:text-white h-6 w-16 capitalize pb-px mt-1 font-semibold bg-white hover:bg-blue-900 rounded-md pointer-events-auto"
                         id="contacts">
-                        <a href="#contact">
-                            Contacts
+                        <a href="#application-form">
+                            Fill Form
                         </a>
                     </button>
                 </div>
@@ -170,28 +173,56 @@
                         onclick="forInfo3()">Enroll
                         Now</button>
                 </div>
-                <div class="absolute pointer-events-none text-sm top-1/3 w-64 backdrop-blur-sm bg-sky-700/50 text-center left-2/4 p-2 -translate-x-2/4 -translate-y-2/4 transition-transform hidden"
+                <div class="absolute pointer-events-none text-sm top-1/3 w-64 backdrop-blur-sm bg-sky-700/50 text-center left-2/4 p-2 -translate-x-2/4 -translate-y-2/4 transition-transform hidden add"
                     id="c-info">
                     <h4>Course Fee : 8000/-</h4>
                     <h4>Course Duration : 5 Months</h4>
                     <h4>Course AddOn : English and Hindi Typing</h4>
                     <button
                         class="text-sm text-blue-900 hover:text-white h-6 w-16 capitalize pb-px mt-1 font-semibold bg-white hover:bg-blue-900 rounded-md pointer-events-auto"
-                        id="contacts"><a href="#contact">Contact</a></button>
+                        id="contacts"><a href="#application-form">Fill Form</a></button>
                 </div>
             </div>
         </main>
+        <div class="absolute left-2/4 hidden -translate-x-2/4 bottom-44 max-w-[400px] w-full min-h-[500px] z-50 bg-sky-400 border-2 border-red-500 rounded-xl p-2 mx-2" id="entry-list">
+            <div class="relative bottom-0 p-1 bg-slate-300" onclick="localStorage.clear()">Clear</div>
+            <div id="table-heading" class="grid grid-cols-4">
+                <div id="name-det">Name</div>
+                <div id="education-det">Education & Course</div>
+                <div id="number-det">Mobile Number</div>
+                <div id="address-det">Address</div>
+            </div>
+
+        </div>
+        <h1 id="application-form" class="text-center text-3xl text-white mt-10">Application Form</h1>
+        <div id="application-form" class="rounded-lg max-w-96 flex flex-col w-full min-h-96 h-full bg-blue-500 mx-auto mt-12 p-4">
+        <form action="">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required class="max-w-[400px] w-full min-h-5 block outline-none border-0 px-2 mb-5">
+            <label for="education">Education & Selected Course:</label>
+            <input type="text" id="education" required class="max-w-[200px] w-full min-h-5 block outline-none border-0 px-2 mb-5">
+            <label for="number">Number:</label> 
+            <input type="number" id="number" maxlength="10" required class="max-w-[150px] w-full min-h-5 block outline-none border-0 px-2 mb-5">
+            <label for="number">Address:</label> 
+            <input type="text" id="address" required class="max-w-[400px] w-full min-h-10 mb-7 p-0 outline-none border-0 px-2 ">
+            <button type="reset" onclick="showValue()" class="text-[12px] md:text-sm text-blue-900 hover:text-white md:h-10 w-16 md:w-20 capitalize p-2 font-semibold bg-white hover:bg-blue-900 rounded-md mx-auto">Submit</button>
+        </form>
+        </div>
         <footer
-            class="max-w-screen-xl w-full px-9 bg-rose-400 min-h-32 flex flex-col md:flex-row items-center mt-10 text-xl tracking-wide justify-between"
+            class="max-w-screen-xl w-full px-9 bg-blue-600 text-white min-h-32 flex flex-col md:flex-row items-center mt-10 text-xl tracking-wide justify-between relative mb-3"
             id="contact">
             <div class="text-center md:text-balance">
                 <h4 class="">Mukesh Samrit :</h4>
                 <p class="select-all">&nbsp;8668979163</p>
             </div>
+            <div>
+                <input id="password" type="text" id="password" class="text-sm text-black max-w-48 min-h-8 outline-0 border-0 p-1" autocomplete="false" placeholder="Enter Admin Password">
+                <button id="view" onclick="showList()" ondblclick="hideList()" title="Enter Correct Password" class="min-h-8 text-sm inline-block px-1 bg-red-500" disabled>View Entries</button>
+            </div>
             <div class="mt-3">
                 <p class="text-center md:text-balance">Old Kamptee Road, <br>Near Gopi Kirana, Kalmana, <br> Nagpur</p>
             </div>
-        </footer>
+        </footer>  
     </div>
 </body>
 

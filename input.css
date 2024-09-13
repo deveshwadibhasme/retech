@@ -6,4 +6,7 @@
     .course{
         @apply w-64 md:w-80 min-h-48 text-2xl md:text-3xl pt-6 p-2 bg-white ;
     }
+    .show-list{
+        @apply -translate-y-0 opacity-100  transition-all;
+    }
 }
