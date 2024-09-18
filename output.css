@@ -7,6 +7,54 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
+#hero{
+  background-image: url(/image/hero-img.jpg);
+  overflow: hidden;
+}
+
+.testinomial{
+  display: flex;
+  min-height: 300px;
+  margin-top: 10px;
+  align-items: center;
+  gap: 15px;
+  transform: translateX(100%);
+  animation: arrive 25s linear infinite;
+  user-select: none;
+}
+
+
+@keyframes arrive {
+  from{
+    transform: translateX(100%);
+  }
+  to{
+    transform: translateX(-150%);
+  }
+}
+
+.testino{
+  min-height: 200px;
+  max-width: 300px;
+  background-color: #3bd1f6;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.testino .client-name{
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.testino .comment{
+  font-size: 16px;
+  padding-top: 10px;
+}
+
 *,
 ::before,
 ::after {
@@ -585,6 +633,10 @@ video {
   visibility: visible;
 }
 
+.static {
+  position: static;
+}
+
 .fixed {
   position: fixed;
 }
@@ -703,12 +755,24 @@ video {
   display: inline-block;
 }
 
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
+}
+
+.contents {
+  display: contents;
 }
 
 .hidden {
@@ -779,6 +843,10 @@ video {
   width: 16rem;
 }
 
+.w-\[500px\] {
+  width: 500px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -823,6 +891,10 @@ video {
   max-width: 1280px;
 }
 
+.max-w-\[500px\] {
+  max-width: 500px;
+}
+
 .-translate-x-2\/4 {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -856,6 +928,10 @@ video {
   -webkit-user-select: all;
      -moz-user-select: all;
           user-select: all;
+}
+
+.resize {
+  resize: both;
 }
 
 .grid-cols-4 {
@@ -892,6 +968,10 @@ video {
 
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .rounded-lg {
@@ -948,18 +1028,18 @@ video {
   background-color: rgb(3 105 161 / 0.5);
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .bg-slate-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(src\\image\\hero-img\.jpg\)\] {
-  background-image: url(src\image\hero-img.jpg);
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[url\(\\image\\hero-img\.jpg\)\] {
+  background-image: url(\image\hero-img.jpg);
 }
 
 .bg-right-bottom {

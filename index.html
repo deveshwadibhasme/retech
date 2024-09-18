@@ -13,6 +13,7 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="output.css">
     <script src='script.js' defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
     <style>
         * {
             scroll-behavior: smooth;
@@ -59,7 +60,10 @@
             transform: rotateY(90deg);
         }
 
-        input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
         body {
             font-family: "Sofia Sans", sans-serif;
@@ -71,7 +75,8 @@
 
 <body>
     <div class="hero max-w-full min-h-full relative overflow-x-hidden">
-        <marquee behavior="smooth" direction="right" class="absolute translate-y-32 z-40 text-white">Website development is not completed yet</marquee>
+        <marquee behavior="smooth" direction="right" class="absolute translate-y-32 z-40 text-white">Website development
+            is not completed yet</marquee>
         <div class="fixed top-0 w-full md:w-full h-16 z-20 overflow-x-hidden" id="header">
             <div class="mx-auto flex justify-around max-w-screen w-full md:max-w-screen h-full items-center"
                 id="header-inner">
@@ -80,7 +85,7 @@
                     <a class="p-2 hover:bg-blue-700 rounded-xl" href="">
                         Home
                     </a>
-                    <a class="p-2 hover:bg-blue-700 rounded-xl" href="">
+                    <a class="p-2 hover:bg-blue-700 rounded-xl" href="#testinomial">
                         Testinomial
                     </a>
                     <a class="p-2 hover:bg-blue-700 rounded-xl" href="">
@@ -108,8 +113,7 @@
             </div>
         </div>
         <div
-            class="h-[560px] bg-right-bottom md:bg-center w-screen bg-[url(image/hero-img.jpg)] after:bg-[rgba(71,61,135,0.4)] after:max-w-full after:min-h-screen after:absolute after:z-10 after:w-full after:inset-0 backdrop-blur-xl clip-path -mb-40 items-center justify-center flex bg-no-repeat overflow-x-hidden">
-
+            class="h-[560px] bg-right-bottom md:bg-center w-screen bg-[url(/image/hero-img.jpg)] after:bg-[rgba(71,61,135,0.4)] after:max-w-full after:min-h-screen after:absolute after:z-10 after:w-full after:inset-0 backdrop-blur-xl clip-path -mb-40 items-center justify-center flex bg-no-repeat overflow-x-hidden" id="hero">
             <h1 class="mb-32 text-5xl md:text-7xl text-white z-20 font-bold text-center md:text-balance cursor-pointer">
                 <span class="hover:text-cyan-500 transition-colors ease-linear">Re-Tech</span>
                 <span class="hover:text-cyan-400 transition-colors ease-linear">Computer</span>
@@ -184,9 +188,10 @@
                 </div>
             </div>
         </main>
-        <div class="absolute left-2/4 hidden -translate-x-2/4 bottom-44 max-w-[400px] w-full min-h-[500px] z-50 bg-sky-400 border-2 border-red-500 rounded-xl p-2 mx-2" id="entry-list">
+        <div class="absolute left-2/4 hidden -translate-x-2/4 bottom-44 max-w-[500px] w-full  min-h-[500px] z-50 bg-sky-400 border-2 border-red-500 rounded-xl p-2 mx-2"
+            id="entry-list">
             <div class="relative bottom-0 p-1 bg-slate-300" onclick="localStorage.clear()">Clear</div>
-            <div id="table-heading" class="grid grid-cols-4">
+            <div id="table-heading" class="grid grid-cols-4 text-center">
                 <div id="name-det">Name</div>
                 <div id="education-det">Education & Course</div>
                 <div id="number-det">Mobile Number</div>
@@ -195,35 +200,60 @@
 
         </div>
         <h1 id="application-form" class="text-center text-3xl text-white mt-10">Application Form</h1>
-        <div id="application-form" class="rounded-lg max-w-96 flex flex-col w-full min-h-96 h-full bg-blue-500 mx-auto mt-12 p-4">
-        <form action="">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required class="max-w-[400px] w-full min-h-5 block outline-none border-0 px-2 mb-5">
-            <label for="education">Education & Selected Course:</label>
-            <input type="text" id="education" required class="max-w-[200px] w-full min-h-5 block outline-none border-0 px-2 mb-5">
-            <label for="number">Number:</label> 
-            <input type="number" id="number" maxlength="10" required class="max-w-[150px] w-full min-h-5 block outline-none border-0 px-2 mb-5">
-            <label for="number">Address:</label> 
-            <input type="text" id="address" required class="max-w-[400px] w-full min-h-10 mb-7 p-0 outline-none border-0 px-2 ">
-            <button type="reset" onclick="showValue()" class="text-[12px] md:text-sm text-blue-900 hover:text-white md:h-10 w-16 md:w-20 capitalize p-2 font-semibold bg-white hover:bg-blue-900 rounded-md mx-auto">Submit</button>
-        </form>
+        <div id="application-form"
+            class="rounded-lg max-w-96 flex flex-col w-full min-h-96 h-full bg-blue-500 mx-auto mt-12 p-4">
+            <form name="submit-to-google-sheet">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required
+                    class="max-w-[400px] w-full min-h-5 block outline-none border-0 px-2 mb-5">
+                <label for="education">Education & Selected Course:</label>
+                <input type="text" id="education" name="education"  required
+                    class="max-w-[200px] w-full min-h-5 block outline-none border-0 px-2 mb-5">
+                <label for="number">Number:</label>
+                <input type="number" id="number" maxlength="10" name="number"  required
+                    class="max-w-[150px] w-full min-h-5 block outline-none border-0 px-2 mb-5">
+                <label for="number">Address:</label>
+                <input type="text" id="address"  name="address" required
+                    class="max-w-[400px] w-full min-h-10 mb-7 p-0 outline-none border-0 px-2 ">
+                <button type="submit" onclick="showValue()"
+                    class="text-[12px] md:text-sm text-blue-900 hover:text-white md:h-10 w-16 md:w-20 capitalize p-2 font-semibold bg-white hover:bg-blue-900 rounded-md mx-auto">Submit</button>
+            </form>
+        </div>
+        <div id="testinomial">
+        </div>
+        <div class="testinomial">
+
         </div>
         <footer
-            class="max-w-screen-xl w-full px-9 bg-blue-600 text-white min-h-32 flex flex-col md:flex-row items-center mt-10 text-xl tracking-wide justify-between relative mb-3"
+            class="mx-auto max-w-screen-xl w-full px-9 bg-blue-600 text-white min-h-32 flex flex-col md:flex-row items-center mt-10 text-xl tracking-wide justify-between relative mb-3"
             id="contact">
             <div class="text-center md:text-balance">
                 <h4 class="">Mukesh Samrit :</h4>
                 <p class="select-all">&nbsp;8668979163</p>
             </div>
             <div>
-                <input id="password" type="text" id="password" title:"Password is: mac" class="text-sm text-black max-w-48 min-h-8 outline-0 border-0 p-1" autocomplete="false" placeholder="mac : Admin Password">
-                <button id="view" onclick="showList()" ondblclick="hideList()" title="Enter Correct Password" class="min-h-8 text-sm inline-block px-1 bg-red-500" disabled>View Entries</button>
+                <input id="password" type="text" id="password"
+                    class="text-sm text-black max-w-48 min-h-8 outline-0 border-0 p-1" autocomplete="false"
+                    placeholder="Enter Admin Password">
+                <button id="view" onclick="showList()" ondblclick="hideList()" title="Enter Correct Password"
+                    class="min-h-8 text-sm inline-block px-1 bg-red-500" disabled>View Entries</button>
             </div>
             <div class="mt-3">
                 <p class="text-center md:text-balance">Old Kamptee Road, <br>Near Gopi Kirana, Kalmana, <br> Nagpur</p>
             </div>
-        </footer>  
+        </footer>
     </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzuUd2SJczeKeZAoWQtR_0N1jWk2XahcMsnKYFsHHORaF28EJsrO121TGKLmuSSy52K/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 
 </html>
