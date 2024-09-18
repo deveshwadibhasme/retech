@@ -65,6 +65,7 @@ const applicantEducation = document.querySelector('#education')
 const applicantNumber = document.querySelector('#number')
 const applicantAddress = document.querySelector('#address')
 
+
 // let keyStoreName = []
 // applicantName.addEventListener('change', (key) => {
 //     const uniqueKey = `${`Name`}${new Date().getTime()}`
