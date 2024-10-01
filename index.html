@@ -115,19 +115,40 @@
         }
 
 
-        .details-uploaded{
-            z-index:100;
-        }
-
         body {
             font-family: "Sofia Sans", sans-serif;
             background-color: rgb(10, 12, 167);
             scroll-behavior: smooth;
         }
+
+        #preloader {
+            max-width: 100vw;
+            width: 100%;
+            min-height: 100vh;
+            background: black url(image/preloader.gif);
+            background-size: 40% auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 1000;
+            position: fixed;
+            top: 0;
+            transition: 0.75s ease;
+        }
+
+        @media (max-width:600px) {
+            #preloader {
+                background: black url(image/preloader.gif);
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <div id="preloader">
+    </div>
     <div class="hero max-w-full min-h-full relative overflow-x-hidden">
         <marquee behavior="smooth" direction="right" class="absolute translate-y-32 z-40 text-white">Website development
             is not completed yet</marquee>
@@ -242,33 +263,37 @@
                 </div>
             </div>
         </main>
-        <div class="absolute left-2/4 hidden -translate-x-2/4 bottom-44 max-w-[500px] w-full  min-h-[500px] z-50 bg-sky-400 border-2 border-red-500 rounded-xl p-2 mx-2 overflow-hidden"
+        <div class="absolute left-2/4 hidden -translate-x-2/4 bottom-44 max-w-[500px] w-full min-h-[500px] z-50 bg-sky-400 border-2 border-red-500 rounded-xl p-2 mx-2"
             id="entry-list">
-            <div class="relative bottom-0 p-1 bg-slate-300" onclick="localStorage.clear()">Clear (disabled)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp Note:Watch Excel at 75% Zoom</div>
+            <div class="relative bottom-0 p-1 bg-slate-300" onclick="localStorage.clear()">Clear
+                (disabled)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp Note:Watch Excel at 75% Zoom</div>
             <div id="table-heading" class="grid grid-cols-4 text-center">
                 <div id="name-det">Name</div>
                 <div id="education-det">Education</div>
                 <div id="number-det">Mobile Number</div>
                 <div id="address-det">Address</div>
-        <iframe src="https://docs.google.com/spreadsheets/d/14GpGebLGb-ngSizc552BBYvXu0ujZuN9gd6fv_w7DOA/edit?gid=307798216#gid=307798216" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="500px" width="480px" allowfullscreen></iframe>
+                <iframe
+                    src="https://docs.google.com/spreadsheets/d/14GpGebLGb-ngSizc552BBYvXu0ujZuN9gd6fv_w7DOA/edit?gid=307798216#gid=307798216"
+                    style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="1" marginheight="0px"
+                    marginwidth="0px" height="500px" width="480px"></iframe>
             </div>
         </div>
         <h1 id="application-form" class="text-center text-3xl text-white mt-10">Application Form</h1>
         <div id="application-form"
-            class="rounded-lg max-w-96 flex flex-col w-full min-h-96 h-full bg-blue-500 mx-auto mt-12 p-4">
+            class="rounded-lg max-w-96 flex flex-col w-full min-h-96 h-full text-white mx-auto mt-12 p-4">
             <form name="submit-to-google-sheet">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required
-                    class="max-w-[400px] w-full min-h-5 block outline-none border-0 px-2 mb-5">
+                    class="max-w-[400px] w-full min-h-5 block outline-none bg-transparent border-b-2 mb-5">
                 <label for="education">Education & Selected Course:</label>
                 <input type="text" id="education" name="education" required
-                    class="max-w-[200px] w-full min-h-5 block outline-none border-0 px-2 mb-5">
+                    class="max-w-[200px] w-full min-h-5 block outline-none bg-transparent border-b-2 mb-5">
                 <label for="number">Number:</label>
                 <input type="number" id="number" maxlength="10" name="number" required
-                    class="max-w-[150px] w-full min-h-5 block outline-none border-0 px-2 mb-5">
+                    class="max-w-[150px] w-full min-h-5 block outline-none bg-transparent border-b-2 mb-5">
                 <label for="number">Address:</label>
                 <input type="text" id="address" name="address" required
-                    class="max-w-[400px] w-full min-h-10 mb-7 p-0 outline-none border-0 px-2 ">
+                    class="max-w-[400px] w-full min-h-10 mb-7 p-0 outline-none bg-transparent border-b-2 ">
                 <button type="submit" onclick="showValue()"
                     class="text-[12px] md:text-sm text-blue-900 hover:text-white md:h-10 w-16 md:w-20 capitalize p-2 font-semibold bg-white hover:bg-blue-900 rounded-md mx-auto">Submit</button>
             </form>

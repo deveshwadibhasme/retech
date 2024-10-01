@@ -1,32 +1,32 @@
 [
     {
         "id":1,
-        "name":"Devesh Wadibhasme",
+        "name":"Reviewer Name",
         "comment":"Class Staff is of friendly nature. A good enviorment for learning"
     },
     {
         "id":2,
-        "name":"Harshal Kolhe",
-        "comment":"Class Staff is of friendly nature. A good enviorment for learning"
+        "name":"Reviewer Name",
+        "comment":"Comments about institute"
     },
     {
         "id":3,
-        "name":"Devesh Wadibhasme",
-        "comment":"Class Staff is of friendly nature. A good enviorment for learning"
+        "name":"Reviewer Name",
+        "comment":"Comments about institute"
     },
     {
         "id":4,
-        "name":"Harshal Kolhe",
-        "comment":"Class Staff is of friendly nature. A good enviorment for learning"
+        "name":"Reviewer Name",
+        "comment":"Comments about institute"
     },
     {
         "id":5,
-        "name":"Devesh Wadibhasme",
-        "comment":"Class Staff is of friendly nature. A good enviorment for learning"
+        "name":"Reviewer Name",
+        "comment":"Comments about institute"
     },
     {
         "id":6,
-        "name":"Harshal Kolhe",
-        "comment":"Class Staff is of friendly nature. A good enviorment for learning"
+        "name":"Reviewer Name",
+        "comment":"Comments about institute"
     }
 ]
