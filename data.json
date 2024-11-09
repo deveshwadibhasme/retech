@@ -1,32 +1,32 @@
 [
     {
         "id":1,
-        "name":"Reviewer Name",
-        "comment":"Class Staff is of friendly nature. A good enviorment for learning"
+        "name":"Narendra Sahu",
+        "comment":"Teaching faculty is good They offerings different types of classes like Java, C & C++, MS-CIT,MS-OFFICE, Typing etc."
     },
     {
         "id":2,
-        "name":"Reviewer Name",
-        "comment":"Comments about institute"
+        "name":"Rajesh Choudhari",
+        "comment":"Very nice institute and there teaching staff is very good communicate I love my re-tech institute"
     },
     {
         "id":3,
-        "name":"Reviewer Name",
-        "comment":"Comments about institute"
+        "name":"Manoj Sahu",
+        "comment":"It is best computer couching classes of kalamna"
     },
     {
         "id":4,
-        "name":"Reviewer Name",
-        "comment":"Comments about institute"
+        "name":"Ritik Shahu",
+        "comment":"Best education and maintain computer systems"
     },
     {
         "id":5,
-        "name":"Reviewer Name",
-        "comment":"Comments about institute"
+        "name":"Umesh Kahalkar",
+        "comment":"Right place for Education experience teaching staff ."
     },
     {
         "id":6,
-        "name":"Reviewer Name",
-        "comment":"Comments about institute"
+        "name":"Anny Sangode",
+        "comment":"Nice place and good teaching staff very good communication in their staff and owner"
     }
 ]
